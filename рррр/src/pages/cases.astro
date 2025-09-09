@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const posts = await Astro.glob('./cases/*.md');
+---
+<BaseLayout title="Кейсы — A&M" description="Выдержка проектов. Полное портфолио по запросу.">
+  <section class="container" style="padding-top:64px">
+    <h1 class="section-title">Кейсы</h1>
+    <p class="section-sub">Полные презентации — по запросу.</p>
+    <div class="portfolio">
+      {posts.map(p => (
+        <a class="shot" href={p.url}>
+          <span>{p.frontmatter.title}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

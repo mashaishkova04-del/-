@@ -1,0 +1,53 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "settings"
+    label: "Настройки"
+    files:
+      - name: "site"
+        label: "Параметры сайта"
+        file: "src/data/settings.json"
+        fields:
+          - { label: "Название сайта", name: "site_name", widget: "string", default: "A&M Agency" }
+          - { label: "Слоган", name: "tagline", widget: "string", default: "Маркетинг под продажу" }
+          - { label: "Telegram", name: "telegram", widget: "string", default: "@am_agency" }
+          - { label: "Email", name: "email", widget: "string", default: "hello@am-agency.ru" }
+          - { label: "Телефон", name: "phone", widget: "string", default: "+7 (900) 000-00-00" }
+
+  - name: "cases"
+    label: "Кейсы"
+    label_singular: "Кейс"
+    folder: "src/pages/cases"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Описание (SEO)", name: "description", widget: "text", required: false }
+      - { label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Обложка", name: "thumbnail", widget: "image", required: false }
+      - { label: "Теги", name: "tags", widget: "list", required: false }
+      - { label: "Макет", name: "layout", widget: "hidden", default: "../../layouts/CaseLayout.astro" }
+      - { label: "Контент", name: "body", widget: "markdown" }
+
+  - name: "team"
+    label: "Команда"
+    label_singular: "Сотрудник"
+    folder: "src/pages/team"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Имя", name: "title", widget: "string" }
+      - { label: "Роль", name: "role", widget: "string" }
+      - { label: "Аватар", name: "avatar", widget: "image", required: false }
+      - { label: "Порядок", name: "order", widget: "number", required: false, default: 1 }
+      - { label: "Макет", name: "layout", widget: "hidden", default: "../../layouts/TeamMemberLayout.astro" }
+      - { label: "Био", name: "body", widget: "markdown" }

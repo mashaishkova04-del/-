@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import settings from "../data/settings.json";
+---
+<BaseLayout title={`${settings.site_name} — Маркетинговое агентство`} description={settings.tagline}>
+  <section class="container hero">
+    <div>
+      <h1>Маркетинг, который <span style="background:linear-gradient(135deg,var(--bg2),var(--bg1));-webkit-background-clip:text;background-clip:text;color:transparent">движет продажу</span></h1>
+      <p>{settings.tagline}. SMM, таргет, контекст, лендинги и CRM — собираем понятную систему роста.</p>
+      <div class="badges">
+        <span class="badge">7+ лет в ритейле техники</span>
+        <span class="badge">Продакшн: дизайн + видео + 3D</span>
+        <span class="badge">A/B — меньше CPA, больше LTV</span>
+      </div>
+      <div class="cta-wrap">
+        <a class="btn" href="/services">Посмотреть услуги</a>
+        <a class="btn ghost" href="/cases">Кейсы</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin:0 0 8px">Быстрый старт</h3>
+      <p class="small">Коротко о задачах — предложим план на 2 недели и прайс под объём.</p>
+      <div class="cta-wrap" style="margin-top:12px">
+        <a class="btn" href="/contact">Оставить заявку</a>
+        <a class="btn ghost" href="/services">Собрать пакет</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Что делаем</h2>
+      <p class="section-sub">Комплектуем команду под ваши цели и гипотезы. Минимум шумов — максимум эффективности.</p>
+      <div class="grid">
+        <div class="card col-4 service-card"><div class="icon">S</div><div><h3>SMM & Контент</h3><p>Контент‑план, съёмки, рилсы, комьюнити, интеграции.</p></div></div>
+        <div class="card col-4 service-card"><div class="icon">T</div><div><h3>Таргет & Контекст</h3><p>VK/Telegram + Директ. Гипотезы, A/B, оптимизация CPC/CPA.</p></div></div>
+        <div class="card col-4 service-card"><div class="icon">D</div><div><h3>Дизайн & 3D</h3><p>Айдентика, креативы, motion и 3D. Материалы для офлайна.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="band">
+        <div>
+          <h3 style="margin:0 0 6px">Готовы начать с бесплатного аудита?</h3>
+          <p style="margin:0;opacity:.9">Оставьте контакты — пришлём чек‑лист и план быстрой проверки.</p>
+        </div>
+        <div class="cta-wrap">
+          <a class="btn" href="/contact">Оставить контакты</a>
+          <a class="btn ghost" href="/cases">Смотреть кейсы</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

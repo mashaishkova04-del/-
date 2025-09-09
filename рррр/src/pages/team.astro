@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const people = await Astro.glob('./team/*.md');
+people.sort((a,b) => (a.frontmatter.order ?? 999) - (b.frontmatter.order ?? 999));
+---
+<BaseLayout title="Команда — A&M" description="Стратегия, таргет, директ, SMM, дизайн, видео, 3D, продакшн.">
+  <section class="container" style="padding-top:64px">
+    <h1 class="section-title">Команда</h1>
+    <p class="section-sub">Плотная связка: стратегия → продакшн → трафик → аналитика.</p>
+    <div class="grid">
+      {people.map(p => (
+        <a class="card col-6" href={p.url}>
+          <h3>{p.frontmatter.title}</h3>
+          <p class="small">{p.frontmatter.role}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

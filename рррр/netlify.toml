@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Ensure /admin loads correctly
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301

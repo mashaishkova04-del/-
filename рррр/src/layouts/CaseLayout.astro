@@ -1,0 +1,13 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+<BaseLayout title={`${frontmatter.title} — Кейс`} description={frontmatter.description}>
+  <section class="container">
+    <article class="prose">
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.thumbnail && <img src={frontmatter.thumbnail} alt={frontmatter.title} />}
+      <slot />
+    </article>
+  </section>
+</BaseLayout>

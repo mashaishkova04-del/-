@@ -1,0 +1,31 @@
+---
+import settings from "../data/settings.json";
+---
+<footer>
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="brand"><div class="logo">A&M</div><span>{settings.site_name}</span></div>
+        <p class="small" style="margin-top:10px">
+          Делаем маркетинг понятным: прозрачные метрики, аккуратный продакшн, ощутимый рост.
+        </p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <p class="small"><a href="/services">Услуги</a><br><a href="/cases">Кейсы</a><br><a href="/team">Команда</a></p>
+      </div>
+      <div>
+        <h4>Документы</h4>
+        <p class="small"><a href="#">Договор</a><br><a href="#">Политика конфиденциальности</a></p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p class="small">Telegram: {settings.telegram}<br>Email: {settings.email}<br>Тел.: {settings.phone}</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:18px">© <span id="year"></span> {settings.site_name} — Все права защищены.</p>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
