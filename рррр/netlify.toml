@@ -2,7 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
-# Ensure /admin loads correctly
+
+[build.environment]
+  NODE_VERSION = "20"
+
 [[redirects]]
   from = "/admin"
   to = "/admin/"
